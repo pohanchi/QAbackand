@@ -16,7 +16,7 @@ context = "國立交通大學，簡稱交大，原建於上海市，後復校於
 c_tokens = tokenizer.tokenize(context)
 context_ids = tokenizer.convert_tokens_to_ids(c_tokens)
 
-question = "國立交通大學復校後與哪間大學相鄰？"
+question = "國立交通大學與哪間大學相鄰"
 
 q_tokens = tokenizer.tokenize(question)
 question_ids = tokenizer.convert_tokens_to_ids(q_tokens)
