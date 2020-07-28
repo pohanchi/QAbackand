@@ -32,6 +32,7 @@ if is_torch_available():
     import torch
 
 logger = logging.getLogger(__name__)
+logging.disable(logging.WARNING)
 
 SPECIAL_TOKENS_MAP_FILE = 'special_tokens_map.json'
 ADDED_TOKENS_FILE = 'added_tokens.json'

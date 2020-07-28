@@ -27,6 +27,7 @@ from io import open
 from .file_utils import cached_path, CONFIG_NAME
 
 logger = logging.getLogger(__name__)
+logging.disable(logging.WARNING)
 
 class PretrainedConfig(object):
     r""" Base class for all configuration classes.
@@ -148,7 +149,7 @@ class PretrainedConfig(object):
                         pretrained_model_name_or_path,
                         ', '.join(cls.pretrained_config_archive_map.keys()),
                         config_file, CONFIG_NAME)
-            raise EnvironmentError(msg)
+                raise EnvironmentError(msg)
 
         if resolved_config_file == config_file:
             logger.info("loading configuration file {}".format(config_file))

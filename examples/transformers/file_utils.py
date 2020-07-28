@@ -25,6 +25,7 @@ from tqdm import tqdm
 from contextlib import contextmanager
 
 logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
+logging.disable(logging.WARNING)
 
 try:
     import tensorflow as tf
@@ -64,6 +65,7 @@ except (AttributeError, ImportError):
     PYTORCH_PRETRAINED_BERT_CACHE = os.getenv('PYTORCH_TRANSFORMERS_CACHE',
                                               os.getenv('PYTORCH_PRETRAINED_BERT_CACHE',
                                                         default_cache_path))
+
 
 PYTORCH_TRANSFORMERS_CACHE = PYTORCH_PRETRAINED_BERT_CACHE  # Kept for backward compatibility
 TRANSFORMERS_CACHE = PYTORCH_PRETRAINED_BERT_CACHE  # Kept for backward compatibility
