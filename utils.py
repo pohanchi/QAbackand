@@ -2,7 +2,7 @@ import torch
 import numpy as np
 
 
-def evaluate(tokenizer,start_position, end_position,ignore_index,c_tokens, k):
+def answer(tokenizer,start_position, end_position,ignore_index,c_tokens, k):
     topk_start_position = torch.topk(start_position, k=k)
     topk_end_position = torch.topk(end_position,k=k)
 
