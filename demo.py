@@ -1,6 +1,5 @@
-from examples.transformers import AlbertForQuestionAnswering
-from examples.transformers import BertTokenizer
-from examples.transformers import AlbertConfig
+from examples import AlbertForQuestionAnswering
+from examples import AlbertConfig
 import torch
 import IPython
 import pdb 
@@ -11,12 +10,12 @@ config = AlbertConfig.from_pretrained("output/FirstModel")
 tokenizer = BertTokenizer.from_pretrained("output/FirstModel")
 model =AlbertForQuestionAnswering.from_pretrained("output/FirstModel").to(devices)
 
-context = "國立交通大學，簡稱交大，原建於上海市，後復校於新竹市，為中華民國一所研究型大學。該校主要目的為培育工程、科學及管理方面的人才，此宗旨現於交大校徽上的E、S、A。國立交通大學前身為1896年由盛宣懷創立於上海市徐家匯的南洋公學。在中國抗日戰爭中經歷多次遷校及改組。於國共內戰後，上海原址改組為上海交通大學，並於1958年由教育部選定新竹市為交通大學復校後校址，復校後校址與新竹科學工業園區及國立清華大學相鄰。今日的國立交通大學，為邁向頂尖大學計畫成員，主要發展領域為電子、資通訊及光電等，為臺灣知名院校之一，曾一度與國立清華大學洽談合併事宜，但因新校名稱問題而破局。位於新竹市的交通大學也同上海交通大學、西安交通大學、西南交通大學、北京交通大學並稱「飲水思源 五校一家」，代表五校皆系出於同源。飲水思源紀念碑也為各校的精神團結的象徵之一。"
+context = "在第二屆全走光後，很快的又到了推甄找教授的時期，彷彿不受到前一屆空無一人的情況，順利地收了三位推甄生，其中兩位為中山在校生，即使聽過許多流言蜚語，卻依然想要挑戰自我的進入了。而另一位為外校生，即使在四虎將不斷地暗示下，也依然堅持己見。並且在二月時，先進入實驗室開始地獄生活。這時外校推甄進來的這位，因為前一屆已經沒有人手，因此在學業上不斷地被給予壓力，希望能盡快有所產出。也因此學業進度及七圈精神不斷地被要求改進，想當然也被扣了不少未來薪水。並且老師還無法記取上一屆的教訓，持續威脅學生"
 
 c_tokens = tokenizer.tokenize(context)
 context_ids = tokenizer.convert_tokens_to_ids(c_tokens)
 
-question = "國立交通大學與哪間大學相鄰"
+question = "老師收了幾位推甄生？"
 
 q_tokens = tokenizer.tokenize(question)
 question_ids = tokenizer.convert_tokens_to_ids(q_tokens)
