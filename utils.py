@@ -3,8 +3,8 @@ import numpy as np
 
 
 def evaluate(tokenizer,start_position, end_position, k):
-    topk_start_position = torch.topk(start_position, k=20)
-    topk_end_position = torch.topk(end_position,k=20)
+    topk_start_position = torch.topk(start_position, k=k)
+    topk_end_position = torch.topk(end_position,k=k)
 
     condition_start = ((topk_start_position[1] >= ignore_index) | (topk_start_position[1] ==0) )
     condition_end = ((topk_end_position[1] >= ignore_index) | (topk_end_position[1]==0) )
@@ -28,7 +28,7 @@ def evaluate(tokenizer,start_position, end_position, k):
                     continue
                 if filter_end_index[j] - filter_start_index[i] < max_answer_length:
                     logits=filter_start_logits[i] + filter_end_logits[j]
-                    if len(top20) < 20:
+                    if len(top20) < k:
                         top20.append([filter_start_index[i], filter_end_index[j], logits])
                     else:
                         tmp_array=np.array(top20)
