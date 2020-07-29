@@ -19,7 +19,6 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import logging
 
 from .modeling_tf_bert import TFBertModel, TFBertForMaskedLM, TFBertForSequenceClassification, TFBertForQuestionAnswering
-from .modeling_tf_roberta import TFRobertaModel, TFRobertaForMaskedLM, TFRobertaForSequenceClassification
 
 from .file_utils import add_start_docstrings
 
